@@ -7,10 +7,13 @@ extern "C" {
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_hal.h"
+#include "stm32f4xx_hal_tim.h"
+#include "stm32f4xx_hal_tim_ex.h"
 #include <stdio.h>
 #include "sys_clk.h"
 #include "uart.h"
 #include "adc.h"
+#include "tim2.h"
 #include "stm32f4xx_nucleo.h"
 
 

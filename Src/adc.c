@@ -5,7 +5,8 @@ ADC_HandleTypeDef adc_handle = {
     .Init = {
         .ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV4,
         .Resolution = ADC_RESOLUTION_12B,
-        .ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE,
+        .ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_RISING,
+        .ExternalTrigConv = ADC_EXTERNALTRIGCONV_T2_TRGO,
         .DataAlign = ADC_DATAALIGN_RIGHT,
         .NbrOfConversion = 1,
         .DMAContinuousRequests = DISABLE,
@@ -30,11 +31,10 @@ void init_adc(void) {
     .Rank = 1
   };
   HAL_ADC_ConfigChannel(&adc_handle, &adc_channel);
+  HAL_ADC_Start(&adc_handle);
 }
 
 uint16_t read_adc(void) {
-  HAL_ADC_Start(&adc_handle);
-  HAL_ADC_PollForConversion(&adc_handle, 10000);
   uint16_t value = HAL_ADC_GetValue(&adc_handle);
   return value;
 }

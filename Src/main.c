@@ -14,11 +14,11 @@
 int main(void) {
   HAL_Init();
   SystemClock_Config();
+  init_tim();
   init_uart();
   init_adc();
+  printf("hello world\r\n");
   while (1) {
-    printf("hello world\r\n");
     printf("%d", read_adc());
-    HAL_Delay(1000);
   }
 }

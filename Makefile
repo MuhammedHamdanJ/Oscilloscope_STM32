@@ -25,7 +25,7 @@ C_SOURCES =  \
 Src/main.c \
 Src/uart.c \
 Src/adc.c \
-Src/dma.c \
+Src/tim2.c \
 Src/sys_clk.c \
 Src/stm32f4xx_it.c \
 Src/stm32f4xx_hal_msp.c \
@@ -33,6 +33,8 @@ Drivers/BSP/STM32F4xx-Nucleo/stm32f4xx_nucleo.c \
 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c \
 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c \
 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c \
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c \
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c \
 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c \
 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c \
 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c \
