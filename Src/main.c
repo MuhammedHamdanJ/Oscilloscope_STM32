@@ -1,7 +1,4 @@
-#include <stdio.h>
 #include "main.h"
-#include "sys_clk.h"
-#include "stm32f4xx_hal.h"
 
 /* Oscilloscope:
 * get adc + dma with debug message
@@ -18,8 +15,10 @@ int main(void) {
   HAL_Init();
   SystemClock_Config();
   init_uart();
+  init_adc();
   while (1) {
     printf("hello world\r\n");
+    printf("%d", read_adc());
     HAL_Delay(1000);
   }
 }
