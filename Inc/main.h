@@ -9,19 +9,8 @@ extern "C" {
 #include "stm32f4xx_hal.h"
 #include <stdio.h>
 #include "sys_clk.h"
-//#include "uart.h"
+#include "uart.h"
 #include "stm32f4xx_nucleo.h"
-
-
-
-
-
-
-
-
-void init_uart(void);
-
-
 
 
 #define USART_TX_Pin GPIO_PIN_2
