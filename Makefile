@@ -26,6 +26,7 @@ Src/main.c \
 Src/uart.c \
 Src/adc.c \
 Src/tim2.c \
+Src/dma.c \
 Src/sys_clk.c \
 Src/stm32f4xx_it.c \
 Src/stm32f4xx_hal_msp.c \

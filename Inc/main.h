@@ -9,6 +9,9 @@ extern "C" {
 #include "stm32f4xx_hal.h"
 #include "stm32f4xx_hal_tim.h"
 #include "stm32f4xx_hal_tim_ex.h"
+#include "stm32f4xx_hal_dma_ex.h"
+#include "stm32f4xx_hal_dma.h"
+#include "dma.h"
 #include <stdio.h>
 #include "sys_clk.h"
 #include "uart.h"

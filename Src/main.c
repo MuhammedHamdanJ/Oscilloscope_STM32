@@ -16,9 +16,10 @@ int main(void) {
   SystemClock_Config();
   init_tim();
   init_uart();
+  init_dma();
   init_adc();
   printf("hello world\r\n");
   while (1) {
-    printf("%d", read_adc());
+    ;;
   }
 }
