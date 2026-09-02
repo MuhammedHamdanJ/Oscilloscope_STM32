@@ -12,6 +12,8 @@ extern "C" {
 #include "stm32f4xx_hal_dma_ex.h"
 #include "stm32f4xx_hal_dma.h"
 #include "dma.h"
+#include "i2c.h"
+#include "stm32f4xx_hal_i2c.h"
 #include <stdio.h>
 #include "sys_clk.h"
 #include "uart.h"

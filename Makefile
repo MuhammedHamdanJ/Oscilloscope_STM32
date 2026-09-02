@@ -24,6 +24,7 @@ BUILD_DIR = build
 C_SOURCES =  \
 Src/main.c \
 Src/uart.c \
+Src/i2c.c \
 Src/adc.c \
 Src/tim2.c \
 Src/dma.c \
@@ -32,6 +33,7 @@ Src/stm32f4xx_it.c \
 Src/stm32f4xx_hal_msp.c \
 Drivers/BSP/STM32F4xx-Nucleo/stm32f4xx_nucleo.c \
 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c \
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c \
 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c \
 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c \
 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c \
