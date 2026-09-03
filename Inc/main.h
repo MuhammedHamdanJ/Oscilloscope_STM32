@@ -19,6 +19,7 @@ extern "C" {
 #include "uart.h"
 #include "adc.h"
 #include "tim2.h"
+#include "pwm.h"
 #include "stm32f4xx_nucleo.h"
 #include "ssd1306.h"
 #include "ssd1306_fonts.h"

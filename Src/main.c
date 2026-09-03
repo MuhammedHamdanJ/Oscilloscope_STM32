@@ -1,4 +1,7 @@
 #include "main.h"
+#include "pwm.h"
+#include "ssd1306.h"
+
 
 /*
 * TODO:
@@ -19,6 +22,7 @@ int main(void) {
   init_adc();
   init_i2c();
   test_display();
+  init_test_signal();
   HAL_Delay(1000);
   while (1) {
     if (buf_state) {

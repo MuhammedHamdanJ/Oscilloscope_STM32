@@ -25,6 +25,7 @@ C_SOURCES =  \
 Src/main.c \
 Src/uart.c \
 Src/i2c.c \
+Src/pwm.c \
 Src/adc.c \
 Drivers/SSD1306/ssd1306.c \
 Drivers/SSD1306/ssd1306_fonts.c \
