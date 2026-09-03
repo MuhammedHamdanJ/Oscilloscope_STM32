@@ -1,9 +1,8 @@
 #include "main.h"
 
-/* Oscilloscope:
-* get adc + dma with debug message
-* interface spi monitor
-* later:
+/*
+* TODO:
+* measuring of -ve Vge using offset DC
 * voltage regulation (hardware)
 * trigger
 * measuring function
