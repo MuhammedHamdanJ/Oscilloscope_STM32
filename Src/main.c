@@ -1,4 +1,5 @@
 #include "main.h"
+#include "i2c.h"
 
 /* Oscilloscope:
 * get adc + dma with debug message
@@ -18,6 +19,7 @@ int main(void) {
   init_uart();
   init_dma();
   init_adc();
+  init_i2c();
   printf("hello world\r\n");
   while (1) {
     ;;
