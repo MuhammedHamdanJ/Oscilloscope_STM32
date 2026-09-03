@@ -1,11 +1,15 @@
 #include "tim2.h"
 
+/* i2c cant handle very high freq,
+* to save cycles, set at lower freq
+*/
+
 TIM_HandleTypeDef tim2_handle = {
   .Instance = TIM2,
   .Init = {
       .Prescaler = 83,                     // 84MHz / (Prescaler+1) = 1MHz timer clock (base clk is 84Mhz)
       .CounterMode = TIM_COUNTERMODE_UP,   // counts from 0 to period (100)
-      .Period = 99,                        // 1MHz / (99+1)Khz = 10kHz trigger rate
+      .Period = 199,                        // 1MHz / (199+1)Khz = 5kHz trigger rate
       .ClockDivision = TIM_CLOCKDIVISION_DIV1, // Irrelevant here, DIV1 for no division
       .AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE,
   }

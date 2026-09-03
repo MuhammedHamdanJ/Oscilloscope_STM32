@@ -1,7 +1,7 @@
 #include "adc.h"
 
-volatile uint16_t adc_buf[128] = {0};
-volatile uint8_t buff_state = 0;
+volatile uint16_t adc_buf[256] = {0};
+volatile uint8_t buf_state = 0;
 
 ADC_HandleTypeDef adc_handle = {
     .Instance = ADC1,
@@ -34,13 +34,13 @@ void init_adc(void) {
     .Rank = 1
   };
   HAL_ADC_ConfigChannel(&adc_handle, &adc_channel);
-  HAL_ADC_Start_DMA(&adc_handle, (uint32_t *)adc_buf, 128); //weird typecast cuz api only accepts full word but i use half word
+  HAL_ADC_Start_DMA(&adc_handle, (uint32_t *)adc_buf, 256); //weird typecast cuz api only accepts full word but i use half word
 }
 
 // buf_state: 0 = empty, 1 = half, 2 = full
 void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* adc_handle) {
-  buff_state = 1;
+  buf_state = 1;
 }
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* adc_handle) {
-  buff_state = 2; // rtos wud be nice here but :(
+  buf_state = 2; // rtos wud be nice here but :(
 }
