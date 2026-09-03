@@ -26,6 +26,9 @@ Src/main.c \
 Src/uart.c \
 Src/i2c.c \
 Src/adc.c \
+Drivers/SSD1306/ssd1306.c \
+Drivers/SSD1306/ssd1306_fonts.c \
+Drivers/SSD1306/ssd1306_tests.c \
 Src/tim2.c \
 Src/dma.c \
 Src/sys_clk.c \
@@ -119,7 +122,8 @@ C_INCLUDES =  \
 -IDrivers/STM32F4xx_HAL_Driver/Inc/Legacy \
 -IDrivers/BSP/STM32F4xx-Nucleo \
 -IDrivers/CMSIS/Device/ST/STM32F4xx/Include \
--IDrivers/CMSIS/Include
+-IDrivers/CMSIS/Include \
+-IDrivers/SSD1306/
 
 
 # compile gcc flags

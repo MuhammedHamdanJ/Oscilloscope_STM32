@@ -20,6 +20,8 @@ extern "C" {
 #include "adc.h"
 #include "tim2.h"
 #include "stm32f4xx_nucleo.h"
+#include "ssd1306.h"
+#include "ssd1306_fonts.h"
 
 
 #ifdef __cplusplus

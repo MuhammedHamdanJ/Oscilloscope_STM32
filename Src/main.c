@@ -1,5 +1,4 @@
 #include "main.h"
-#include "i2c.h"
 
 /* Oscilloscope:
 * get adc + dma with debug message
@@ -9,7 +8,7 @@
 * trigger
 * measuring function
 */
-
+void display_logic(void);
 
 
 int main(void) {
@@ -21,7 +20,16 @@ int main(void) {
   init_adc();
   init_i2c();
   printf("hello world\r\n");
+  display_logic();
   while (1) {
     ;;
   }
+}
+
+void display_logic() {
+  ssd1306_Init();
+  ssd1306_Fill(Black);
+  ssd1306_SetCursor(0, 0);
+  ssd1306_WriteString("Hello", Font_7x10, White);
+  ssd1306_UpdateScreen();
 }

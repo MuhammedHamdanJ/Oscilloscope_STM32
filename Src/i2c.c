@@ -1,6 +1,4 @@
 #include "i2c.h"
-#include "stm32f4xx_hal_gpio.h"
-#include "stm32f4xx_hal_i2c.h"
 
 I2C_HandleTypeDef i2c_handle = {
   .Instance = I2C1, // B8,B9 = SCLK, SDA respectfully
@@ -25,10 +23,10 @@ void init_i2c() {
   };
   HAL_GPIO_Init(GPIOB, &gpio);
   HAL_I2C_Init(&i2c_handle);
-}
 
-void start_display() {
-  HAL_I2C_IsDeviceReady(&i2c_handle, 0x3c, 2, 2000);
+  if (HAL_I2C_IsDeviceReady(&i2c_handle, 0x3c, 3, 300)){
+    printf("slave ready");
+  }
 }
 
 /* 
