@@ -1,8 +1,11 @@
 # STM32 Oscilloscope
 
 ## Introduction
-This is a basic oscilloscope I built to learn to program the STM32 without using an abstracted GUI like, It is derived from my basic STM32 project structure repo which in turn uses code generated from ST's CUBEMX along with some of my opinionated additions
+This is a basic oscilloscope I built to learn to program the STM32 without using an abstracted GUI like CubeIDE, It is derived from my basic [STM32 project template](https://github.com/MuhammedHamdanJ/stm32f446re-template) which in turn uses code generated from ST's CUBEMX along with some of my opinionated additions
 
+## DEMO
+
+TODO
 ## Stuff I used from other people
 - All the HAL/LL drivers, Linker Script and Startup Assembly Code from ST
 - The SSD1306 drivers from this [cool github repo](https://github.com/afiskon/stm32-ssd1306/tree/master). (I modified the offset to make it work on my SH1106)
@@ -10,16 +13,15 @@ This is a basic oscilloscope I built to learn to program the STM32 without using
 ## Architecture
  
 ```
-              input signal to display, using TIM3 PWM for demo
-                                    ↓
-              TIM2 (10kHz TRGO) →  ADC1 
-                                    ↓
-                    DMA2 (circular, 256-sample buffer)
-                                    ↓
-                    half/full-complete callback flags
-                                    ↓
-                    render_waveform() on SH1106 over IIC
-
+     input signal to display, using TIM3 PWM for demo
+                           ↓
+     TIM2 (10kHz TRGO) →  ADC1 
+                           ↓
+           DMA2 (circular, 256-sample buffer)
+                           ↓
+           half/full-complete callback flags
+                           ↓
+           render_waveform() on SH1106 over IIC
 ```
  
 ## Hardware Used
@@ -38,9 +40,9 @@ $ picocom -b 115200 /dev/ttyACM0 #or whichever port you're using
 
 Change port or path as needed.
 ```bash
-ST-LINK_gdbserver -d -p 3333 -cp /opt/stm32cubeclt/STM32CubeProgrammer/bin
+$ ST-LINK_gdbserver -d -p 3333 -cp /opt/stm32cubeclt/STM32CubeProgrammer/bin
 #On a different terminal
-arm-none-eabi-gdb build/oscilloscope.elf
+$ arm-none-eabi-gdb build/oscilloscope.elf
 (gdb) target remote localhost:3333
 #debug as needed
 ```
